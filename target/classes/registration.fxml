@@ -7,9 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="400.0" prefWidth="600.0"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="fragments.ControllerRegistration">
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121" fx:controller="fragments.ControllerRegistration">
 
     <children>
         <Label layoutX="242.0" layoutY="14.0" prefHeight="69.0" prefWidth="125.0" text="Registration" textFill="#1f7fc3">
@@ -32,7 +30,7 @@
                 <Font size="15.0" />
             </font>
         </Button>
-        <Button fx:id="btn_batal" layoutX="319.0" layoutY="355.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: #1f7fc3;" text="Registration" textFill="WHITE">
+        <Button fx:id="btn_batal" layoutX="319.0" layoutY="355.0" mnemonicParsing="false" onAction="#pressRegestration" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: #1f7fc3;" text="Registration" textFill="WHITE">
             <font>
                 <Font size="15.0" />
             </font>

@@ -1,13 +1,16 @@
 package fragments;
 
+import JDBS.JDBCPostgreSQLExampl;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import users.User;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ControllerLogin {
 
@@ -32,11 +35,13 @@ public class ControllerLogin {
     @FXML
     private void pressRegistration() {
         try {
-            Parent root =  FXMLLoader.load(getClass().getResource("res/registration.fxml"));
+            Parent root =  FXMLLoader.load(getClass().getResource("/registration.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
             primaryStage.setScene(scene);
             primaryStage.show();
+            User user = new User();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -44,7 +49,7 @@ public class ControllerLogin {
 
     private void onConnection() {
         try {
-            Parent root =  FXMLLoader.load(getClass().getResource("res/home_page.fxml"));
+            Parent root =  FXMLLoader.load(getClass().getResource("home_page.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
             primaryStage.setScene(scene);

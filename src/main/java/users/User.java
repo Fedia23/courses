@@ -3,17 +3,18 @@ package users;
 public class User {
 
     private int id = 0;
-    private int age;
+    private int date;
     private String name;
     private String userName;
     private String password;
     private String country;
     private String phone;
     private String email;
+    public User() {}
 
     public User(int age, String name, String userName, String password, String country, String phone, String email) {
         id++;
-        this.age = age;
+        this.date = age;
         this.name = name;
         this.userName = userName;
         this.password = password;
@@ -22,16 +23,20 @@ public class User {
         this.email = email;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
 
-    public int getAge() {
-        return age;
+    public int getDate() {
+        return date;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setDate(int date) {
+        this.date = date;
     }
 
     public String getName() {
@@ -81,4 +86,5 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }

@@ -3,12 +3,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import users.User;
 
 public class Main extends Application {
 
     @Override
     public void start (Stage primaryStage) throws Exception {
-        Parent root =  FXMLLoader.load(getClass().getResource("/res/login.fxml"));
+        Parent root =  FXMLLoader.load(getClass().getResource("/login.fxml"));
         Scene scene = new Scene(root);
         primaryStage = new Stage();
         primaryStage.setScene(scene);

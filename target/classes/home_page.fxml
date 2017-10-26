@@ -8,10 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="600.0" prefWidth="800.0"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller = "fragments.ControllerHomePage">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121" fx:controller="fragments.ControllerHomePage">
     <children>
         <Pane prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #1f7fc3;">
             <children>
@@ -37,8 +34,8 @@
                 </Label>
             </children>
         </Pane>
-        <TextField fx:id="txtCari" layoutX="661.0" layoutY="107.0" prefHeight="0.0" prefWidth="125.0" promptText="Search" />
-        <Label layoutX="428.0" layoutY="5.0" prefHeight="50.0" prefWidth="95.0" text="WellCome" textFill="#1f7fc3">
+        <TextField fx:id="txtSearch" layoutX="661.0" layoutY="107.0" prefHeight="0.0" prefWidth="125.0" promptText="Search" />
+        <Label layoutX="285.0" layoutY="5.0" prefHeight="50.0" prefWidth="238.0" text="WellCome" textFill="#1f7fc3">
             <font>
                 <Font name="Aqua Grotesque" size="40.0" />
             </font>
