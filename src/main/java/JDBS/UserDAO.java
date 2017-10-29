@@ -9,17 +9,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO extends JDBCPostgreSQLExampl{
+public class UserDAO {
     private static Connection connection = null;
     private static PreparedStatement preparedStatment = null;
     private static ResultSet resultSet = null;
 
     private final String ADD_USER = "insert into users(id, date, name, userName, password, country, phone, email) values(?,?,?,?,?,?,?,?)";
-    private final String GET_LIST = "selected id, date, name, userName, password, country, phone, email";
+    private final String GET_LIST = "SELECT * FROM users";
 
     public void addUser(User user) {
         try {
-            connection = onConnectJDBS();
+            int count = user.getId();
+            user.setId(count++);
+            connection = JDBCPostgreSQLExampl.onConnectJDBS();
             preparedStatment = connection.prepareStatement(ADD_USER);
 
             preparedStatment.setInt(1, user.getId());
@@ -32,6 +34,7 @@ public class UserDAO extends JDBCPostgreSQLExampl{
             preparedStatment.setString(8, user.getEmail());
 
             preparedStatment.executeUpdate();
+            System.out.println("Good");
         } catch(SQLException e) {
             e.printStackTrace();
         }
@@ -41,8 +44,9 @@ public class UserDAO extends JDBCPostgreSQLExampl{
         List<User> listUser = new ArrayList<>();
 
         try {
-            preparedStatment = (PreparedStatement) connection.createStatement();
-            resultSet = preparedStatment.executeQuery(GET_LIST);
+            connection = JDBCPostgreSQLExampl.onConnectJDBS();
+            preparedStatment = connection.prepareStatement(GET_LIST);
+            resultSet = preparedStatment.executeQuery();
 
             while (resultSet.next()) {
                 User user = new User();

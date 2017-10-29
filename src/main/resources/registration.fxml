@@ -7,30 +7,30 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121" fx:controller="fragments.ControllerRegistration">
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fragments.ControllerRegistration">
 
     <children>
-        <Label layoutX="242.0" layoutY="14.0" prefHeight="69.0" prefWidth="125.0" text="Registration" textFill="#1f7fc3">
+        <Label layoutX="103.0" layoutY="14.0" prefHeight="69.0" prefWidth="360.0" text="Registration" textFill="#1f7fc3">
             <font>
                 <Font name="Aqua Grotesque" size="55.0" />
             </font>
         </Label>
-        <TextField fx:id="nim_field" layoutX="25.0" layoutY="114.0" prefHeight="23.0" prefWidth="264.0" promptText="Name" style="-fx-background-color: #dcdcdc;">
+        <TextField fx:id="name" layoutX="25.0" layoutY="114.0" onMouseExited="#nameTF" onMouseReleased="#nameTF" prefHeight="23.0" prefWidth="264.0" promptText="Name" style="-fx-background-color: #dcdcdc;">
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
-        <TextField fx:id="password_field" accessibleRole="PASSWORD_FIELD" layoutX="25.0" layoutY="205.0" prefHeight="29.0" prefWidth="264.0" promptText="Password" style="-fx-background-color: #dcdcdc;">
+        <TextField fx:id="password" accessibleRole="PASSWORD_FIELD" layoutX="25.0" layoutY="205.0" onMouseClicked="#userNameTF" onMouseExited="#passwordTF" onMouseReleased="#passwordTF" prefHeight="29.0" prefWidth="264.0" promptText="Password" style="-fx-background-color: #dcdcdc;">
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
-        <Button fx:id="btn_daftar" layoutX="149.0" layoutY="355.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: #1f7fc3;" text="Back" textFill="WHITE">
+        <Button fx:id="btn_back" layoutX="149.0" layoutY="355.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: #1f7fc3;" text="Back" textFill="WHITE">
             <font>
                 <Font size="15.0" />
             </font>
         </Button>
-        <Button fx:id="btn_batal" layoutX="319.0" layoutY="355.0" mnemonicParsing="false" onAction="#pressRegestration" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: #1f7fc3;" text="Registration" textFill="WHITE">
+        <Button fx:id="btn_regestration" layoutX="319.0" layoutY="355.0" mnemonicParsing="false" onAction="#pressRegestration" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: #1f7fc3;" text="Registration" textFill="WHITE">
             <font>
                 <Font size="15.0" />
             </font>
@@ -44,32 +44,32 @@
                 <Font size="15.0" />
             </font>
         </Label>
-        <TextField fx:id="konfirm_field" layoutX="25.0" layoutY="252.0" prefHeight="29.0" prefWidth="264.0" promptText="Repeat password" style="-fx-background-color: #dcdcdc;">
+        <TextField fx:id="repeat_password" layoutX="25.0" layoutY="252.0" onMouseClicked="#passwordTF" onMouseExited="#repPasswordTF" onMouseReleased="#repPasswordTF" prefHeight="29.0" prefWidth="264.0" promptText="Repeat password" style="-fx-background-color: #dcdcdc;">
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
-        <TextArea fx:id="alamat_field" layoutX="320.0" layoutY="205.0" prefHeight="79.0" prefWidth="264.0" promptText="Your problem">
+        <TextArea fx:id="your_problem" layoutX="320.0" layoutY="205.0" prefHeight="79.0" prefWidth="264.0" promptText="Your problem">
             <font>
                 <Font size="15.0" />
             </font>
         </TextArea>
-        <TextField fx:id="nama_field" layoutX="25.0" layoutY="158.0" prefHeight="29.0" prefWidth="264.0" promptText="Last name" style="-fx-background-color: #dcdcdc;">
+        <TextField fx:id="user_name" layoutX="25.0" layoutY="158.0" onMouseClicked="#nameTF" onMouseExited="#userNameTF" onMouseReleased="#userNameTF" prefHeight="29.0" prefWidth="264.0" promptText="User name" style="-fx-background-color: #dcdcdc;">
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
-        <TextField fx:id="nomor_field" layoutX="320.0" layoutY="301.0" prefHeight="29.0" prefWidth="264.0" promptText="phone" style="-fx-background-color: #dcdcdc;">
+        <TextField fx:id="phone" layoutX="320.0" layoutY="301.0" onMouseClicked="#countryTF" onMouseExited="#phoneTF" onMouseReleased="#phoneTF" prefHeight="29.0" prefWidth="264.0" promptText="phone" style="-fx-background-color: #dcdcdc;">
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
-        <TextField fx:id="email_field" layoutX="25.0" layoutY="301.0" prefHeight="29.0" prefWidth="264.0" promptText="\@mail" style="-fx-background-color: #dcdcdc;">
+        <TextField fx:id="email" layoutX="25.0" layoutY="301.0" onMouseClicked="#repPasswordTF" onMouseReleased="#emailTF" prefHeight="29.0" prefWidth="264.0" promptText="\@mail" style="-fx-background-color: #dcdcdc;">
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
-        <TextField fx:id="jurusan_field" layoutX="320.0" layoutY="158.0" prefHeight="29.0" prefWidth="264.0" promptText="Country" style="-fx-background-color: #dcdcdc;">
+        <TextField fx:id="country" layoutX="320.0" layoutY="158.0" onMouseClicked="#dateTF" prefHeight="29.0" prefWidth="264.0" promptText="Country" style="-fx-background-color: #dcdcdc;">
             <font>
                 <Font size="15.0" />
             </font>
@@ -79,10 +79,13 @@
                 <Font size="12.0" />
             </font>
         </Label>
-        <TextField fx:id="fakultas_field" layoutX="320.0" layoutY="114.0" prefHeight="29.0" prefWidth="264.0" promptText="Age" style="-fx-background-color: #dcdcdc;">
+        <TextField fx:id="date" accessibleRole="DATE_PICKER" layoutX="320.0" layoutY="114.0" onMouseClicked="#emailTF" onMouseExited="#dateTF" onMouseReleased="#dateTF" prefHeight="29.0" prefWidth="264.0" promptText="Date" style="-fx-background-color: #dcdcdc;">
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
+      <Label fx:id="passLabel" layoutX="25.0" layoutY="237.0" prefHeight="16.0" prefWidth="264.0" />
+      <Label fx:id="emailLabel" layoutX="25.0" layoutY="284.0" prefHeight="16.0" prefWidth="264.0" />
+      <Label fx:id="userNameLabel" layoutX="25.0" layoutY="143.0" prefHeight="16.0" prefWidth="264.0" />
     </children>
 </Pane>

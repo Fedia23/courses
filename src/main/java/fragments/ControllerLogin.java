@@ -1,6 +1,6 @@
 package fragments;
 
-import JDBS.JDBCPostgreSQLExampl;
+import JDBS.UserDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,25 +10,39 @@ import javafx.stage.Stage;
 import users.User;
 
 import java.io.IOException;
-import java.sql.SQLException;
+import java.util.List;
 
 public class ControllerLogin {
 
     @FXML private TextField username_field = new TextField();
     @FXML private TextField password_field = new TextField();
+    private List<User> userList;
+    private UserDAO userDAO = new UserDAO();
+    private Stage primaryStage;
+
+
+    private Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+    }
 
     @FXML
     private void pressLogin() {
-        String login = username_field.getText().toString() ;
-        String pass = password_field.getText().toString();
-        if (login.length() <= 3 && pass.length() <= 6) {
-            throw new IllegalArgumentException("Short password");
-        } else {
-            if (validation(login, pass)) {
-                onConnection();
-            } else {
-                throw new IllegalArgumentException("Invalid password");
+        if (validation(username_field.getText().toString(), password_field.getText().toString())) {
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+                Scene scene = new Scene(root);
+                Stage primaryStage = getPrimaryStage();
+                primaryStage.setScene(scene);
+                primaryStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+        } else {
+            System.out.println("FFFF");
         }
     }
 
@@ -37,10 +51,9 @@ public class ControllerLogin {
         try {
             Parent root =  FXMLLoader.load(getClass().getResource("/registration.fxml"));
             Scene scene = new Scene(root);
-            Stage primaryStage = new Stage();
+            Stage primaryStage = getPrimaryStage();
             primaryStage.setScene(scene);
             primaryStage.show();
-            User user = new User();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -48,19 +61,24 @@ public class ControllerLogin {
     }
 
     private void onConnection() {
-        try {
-            Parent root =  FXMLLoader.load(getClass().getResource("home_page.fxml"));
-            Scene scene = new Scene(root);
-            Stage primaryStage = new Stage();
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
     private boolean validation(String name, String pass) {
         boolean value = false;
+        userList = userDAO.getAll();
+
+            if (userList.size() > 0) {
+            for (User cn : userList) {
+                    if (name.equals(cn.getUserName())) {
+                        value = true;
+                    } else {
+                        value = false;
+                    }
+                }
+            } else {
+                value = false;
+            }
 
         return value;
     }

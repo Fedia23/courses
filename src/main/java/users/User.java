@@ -2,7 +2,7 @@ package users;
 
 public class User {
 
-    private int id = 0;
+    private int id;
     private int date;
     private String name;
     private String userName;
@@ -10,10 +10,10 @@ public class User {
     private String country;
     private String phone;
     private String email;
+
     public User() {}
 
     public User(int age, String name, String userName, String password, String country, String phone, String email) {
-        id++;
         this.date = age;
         this.name = name;
         this.userName = userName;
